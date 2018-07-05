@@ -1,0 +1,10 @@
+.navbar-brand
+{
+	color:#fff;
+}
+.navbar-nav li a
+{
+	color:#fff;
+}
+
+.navbar-right{float:right!important;margin-right:-15px}

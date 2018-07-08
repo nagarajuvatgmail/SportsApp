@@ -5,8 +5,20 @@
 .navbar-nav li a
 {
 	color:#fff;
+	border-radius: 15px;
 }
 
-.navbar-right{float:right!important;margin-right:-15px}
+.navbar-nav li a:hover
+{
+	color:#0080ff;
+	background:#fff;
+	border-radius: 15px;
+}
+
+.ml-auto .dropdown-menu {
+	left: auto !important;
+	right: 0px;
+	
+}
 
 

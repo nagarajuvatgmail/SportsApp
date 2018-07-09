@@ -25,33 +25,30 @@ export class UserService {
     this.users.push(user4);
   }
 
-  //private userUrl = 'http://localhost:8080/user-portal/user';
-  private userUrl = '/api';
+  private userUrl = 'http://localhost:8080/getAllUsers';
+  //private userUrl = '/api';
 
   public getUsers() {
     
-    //return this.http.get<User[]>(this.userUrl);
-    return this.users;
+    return this.http.get<User[]>(this.userUrl);
+    //return this.users;
   }
 
   public deleteUser(user: User) {
-    //alert(user.email);
-    //return this.http.delete(this.userUrl + "/" + user.id);
-    this.users.forEach((item, index) => {
-      if(item.id == user.id){
-        this.users.splice(index, 1);
-      }
-      
-    });
+      //alert(user.email);
+      return this.http.delete('http://localhost:8080/deleteUser/' + user.id);
+      /*this.users.forEach((item, index) => {
+          if(item.id == user.id){
+              this.users.splice(index, 1);
+          }
+      });*/
     
-    
-    //this.users.pop();
   }
 
   public createUser(user) {
-    this.users.push(user);
-    return this.users;
-    //return this.http.post<User>(this.userUrl, user);
+      //this.users.push(user);
+      //return this.users;
+      return this.http.post<User>('http://localhost:8080/addUser', user);
   }
 
 }

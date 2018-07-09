@@ -17,12 +17,12 @@ export class AddUserComponent {
   }
 
   createUser(): void {
-    //alert(this.user.email);
-   this.userService.createUser(this.user);
-    // alert("User created successfully." +  this.user);
-        /*.subscribe( data => {
+      //alert(this.user.email);
+      //this.userService.createUser(this.user);
+      // alert("User created successfully." +  this.user);
+      this.userService.createUser(this.user).subscribe( data => {
           alert("User created successfully.");
-        });*/
+      });
 
   };
 

@@ -10,12 +10,16 @@ import {HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from './user/add-user.component';
 import { LoginComponent } from './login/login.component';
 
+import { AlertComponent } from './alerts/alert.component';
+import { AlertService } from './alerts/alert.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     AddUserComponent,
-    LoginComponent
+    LoginComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { User } from '../models/user.model';
 import { UserService } from './user.service';
+import { AlertService } from '../alerts/alert.service';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +14,7 @@ export class UserComponent implements OnInit {
   
   users: User[];
   
-  constructor(private router: Router, private userService: UserService) {
+  constructor(private router: Router, private userService: UserService, private alertService: AlertService) {
 
   }
 
@@ -25,11 +26,11 @@ export class UserComponent implements OnInit {
   };
 
   deleteUser(user: User): void {
-      //alert(user.firstName);
       //this.userService.deleteUser(user);
       this.userService.deleteUser(user).subscribe( data => {
           this.users = this.users.filter(u => u !== user);
-          alert("User deleted successfully.");
+          //alert("User deleted successfully.");
+          this.alertService.info('User ' + user.firstName + ' ' + user.lastName + ' deleted successfully !!');
       });
       
   };
